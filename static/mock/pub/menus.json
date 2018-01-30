@@ -1,0 +1,15 @@
+{
+  "errno": 0,
+  "errmsg": "ok",
+  "time": 1516512990,
+  "data": [{
+    "title": "管理员",
+    "menu_item_group": [{
+      "title": "用户管理",
+      "path": "/user/pages"
+    }, {
+      "title": "角色管理",
+      "path": "/role/pages"
+    }]
+  }]
+}
