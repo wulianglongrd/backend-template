@@ -15,3 +15,23 @@ html, body {
 .default-pagination {
   margin-top: 24px;
 }
+.default-form-layout {
+  width: 600px;
+  .el-checkbox + .el-checkbox {
+    margin-left: 0;
+  }
+  .el-checkbox:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.default-form-item-flex {
+  display: flex;
+  width: 100%;
+  &>div {
+    flex: 1;
+    &+div {
+      margin-left: 10px;
+    }
+  }
+}
