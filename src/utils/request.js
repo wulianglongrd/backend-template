@@ -42,14 +42,18 @@ export default function request (url, params, options) {
       throw new Error(JSON.stringify(json))
     })
     .catch((error) => {
-      let data = JSON.parse(error.message)
-
-      // TODO
-
+      let data = JSON.parse(error)
+      let code = data.errno
       Vue.prototype.$notify.error({
         title: '错误',
         message: data.errmsg
       })
+
+      /**
+       * 做一个其它判断
+       * 如： 未登录跳转登录、无权限跳转错误提示页等
+       */
+
       throw new Error(error.message)
     })
 }

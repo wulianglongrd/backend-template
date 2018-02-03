@@ -49,7 +49,7 @@
         <el-input type="textarea" v-model="form.desc" />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit">新建</el-button>
+        <el-button type="primary" @click="onSubmit">提交</el-button>
         <common-router-back />
       </el-form-item>
     </el-form>
@@ -71,7 +71,19 @@ export default {
       }
     }
   },
+  created () {
+    this.renderItem()
+  },
   methods: {
+    renderItem () {
+      let query = this.$route.query
+      if (!query.id) {
+        console.log('新建')
+        return
+      }
+      console.log('编辑')
+      console.log('renderItem', query)
+    },
     onSubmit () {
       console.log(this.form)
       this.$notify.success('新建成功')

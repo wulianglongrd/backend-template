@@ -40,9 +40,15 @@
       />
       <el-table-column label="操作">
         <template slot-scope="{ row }">
-          <div>
-            操作
-          </div>
+          <common-operate-update
+            :row="row"
+            :query="{a:1, b:2}"
+          />
+          <common-operate-delete
+            @handleCommonDelete="handleCommonDelete"
+            :row="row"
+          />
+
         </template>
       </el-table-column>
     </el-table>
@@ -73,6 +79,10 @@ export default {
         this.pagination = data.pagination
         this.tableData = data.table_data
       })
+    },
+    handleCommonDelete ({ row, query }) {
+      this.$notify.success('删除成功')
+      console.log('handleCommonDelete', row, query)
     }
   }
 }

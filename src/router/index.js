@@ -31,6 +31,10 @@ export default new Router({
       name: 'UserCreate',
       component: UserCreate
     }, {
+      path: '/user/update',
+      name: 'UserUpdate',
+      component: UserCreate
+    }, {
       path: '/user/pages',
       name: 'UserPages',
       component: UserPages
